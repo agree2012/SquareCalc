@@ -41,15 +41,7 @@ namespace SquareCalculator.BI
                                         height++;
                                     else
                                     {
-                                        for (int set = i; set >= (i + 1 - width); set--)
-                                        {
-                                            for (int sset = j; sset >= (j + 1 - height); sset--)
-                                            {
-                                                bmp.SetPixel(set, sset, pixelColor3);
-
-                                            }
-                                        }
-                                        bmp.Save("D:\\bmp.bmp");
+                                        ClearArea(i,j);
                                         break;
                                     }
                                 }
@@ -67,6 +59,17 @@ namespace SquareCalculator.BI
             }
             string result = "Число квадратов = " + square.ToString() + ";  Число прямоугольников = " + rectangle.ToString();
             return new Result { Square = square, Rectangle = rectangle };
+
+            void ClearArea(int x ,int y)
+            {
+                for (int set = x; set >= (x + 1 - width); set--)
+                {
+                    for (int sset = y; sset >= (y + 1 - height); sset--)
+                    {
+                        bmp.SetPixel(set, sset, pixelColor3);
+                    }
+                }
+            }
         }
     }
 }
