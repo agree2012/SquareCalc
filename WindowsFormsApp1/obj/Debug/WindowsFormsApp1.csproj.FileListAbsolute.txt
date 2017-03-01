@@ -22,3 +22,6 @@ C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\obj\Debug\WindowsForm
 C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
 C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\GIT\Test\SquareCalc\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\GIT\Test\SquareCalc\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\GIT\Test\SquareCalc\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
