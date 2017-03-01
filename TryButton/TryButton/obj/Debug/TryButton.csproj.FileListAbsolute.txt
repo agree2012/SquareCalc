@@ -1,0 +1,9 @@
+C:\Users\Илья\Source\Repos\SquareCalc\TryButton\TryButton\bin\Debug\TryButton.exe.config
+C:\Users\Илья\Source\Repos\SquareCalc\TryButton\TryButton\bin\Debug\TryButton.exe
+C:\Users\Илья\Source\Repos\SquareCalc\TryButton\TryButton\bin\Debug\TryButton.pdb
+C:\Users\Илья\Source\Repos\SquareCalc\TryButton\TryButton\obj\Debug\TryButton.csprojResolveAssemblyReference.cache
+C:\Users\Илья\Source\Repos\SquareCalc\TryButton\TryButton\obj\Debug\TryButton.Form1.resources
+C:\Users\Илья\Source\Repos\SquareCalc\TryButton\TryButton\obj\Debug\TryButton.Properties.Resources.resources
+C:\Users\Илья\Source\Repos\SquareCalc\TryButton\TryButton\obj\Debug\TryButton.csproj.GenerateResource.Cache
+C:\Users\Илья\Source\Repos\SquareCalc\TryButton\TryButton\obj\Debug\TryButton.exe
+C:\Users\Илья\Source\Repos\SquareCalc\TryButton\TryButton\obj\Debug\TryButton.pdb
