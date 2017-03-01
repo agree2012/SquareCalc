@@ -14,7 +14,7 @@ namespace Delegate_Practice
         {
             GetMessage message = delegate
             {
-            Console.WriteLine("анонимный делегат");
+            Console.WriteLine("анонимный депутат");
             };
             message();
             Console.Read();
