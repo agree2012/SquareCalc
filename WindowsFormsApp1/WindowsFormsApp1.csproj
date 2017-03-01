@@ -87,6 +87,7 @@
     <Content Include="cbmp.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\cbmp2.bmp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SquareCalculator.BI\SquareCalculator.BI.csproj">
