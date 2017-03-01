@@ -2,3 +2,8 @@ C:\Users\Илья\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\SquareC
 C:\Users\Илья\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\SquareCalculator.BI\bin\Debug\SquareCalculator.BI.pdb
 C:\Users\Илья\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\SquareCalculator.BI\obj\Debug\SquareCalculator.BI.dll
 C:\Users\Илья\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\SquareCalculator.BI\obj\Debug\SquareCalculator.BI.pdb
+C:\Users\Илья\Source\Repos\SquareCalc\SquareCalculator.BI\bin\Debug\SquareCalculator.BI.dll
+C:\Users\Илья\Source\Repos\SquareCalc\SquareCalculator.BI\bin\Debug\SquareCalculator.BI.pdb
+C:\Users\Илья\Source\Repos\SquareCalc\SquareCalculator.BI\obj\Debug\SquareCalculator.BI.csprojResolveAssemblyReference.cache
+C:\Users\Илья\Source\Repos\SquareCalc\SquareCalculator.BI\obj\Debug\SquareCalculator.BI.dll
+C:\Users\Илья\Source\Repos\SquareCalc\SquareCalculator.BI\obj\Debug\SquareCalculator.BI.pdb

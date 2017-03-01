@@ -16,13 +16,13 @@ namespace SquareCalculator.BI
 
     public static class Processor
     {
+        static int width = 1;
+        static int height = 1;
+        static int square = 0;
+        static int rectangle = 0;
         public static Result Calc(Bitmap bmp)
         {
             Color pixelColor3 = bmp.GetPixel(0, 10);
-            int width = 1;
-            int height = 1;
-            int square = 0;
-            int rectangle = 0;
             for (int @string = 0; @string < 10; @string++)
             {
                 for (int column = 0; column < 10; column++)
@@ -41,17 +41,14 @@ namespace SquareCalculator.BI
                                         height++;
                                     else
                                     {
-                                        ClearArea(i,j);
+                                        ClearArea(i, j, bmp);
                                         break;
                                     }
                                 }
                                 break;
                             }
                         }
-                        if (height == width)
-                            square++;
-                        else
-                            rectangle++;
+                        IdentifyFigure(height, width);
                         width = 1;
                         height = 1;
                     }
@@ -59,17 +56,26 @@ namespace SquareCalculator.BI
             }
             string result = "Число квадратов = " + square.ToString() + ";  Число прямоугольников = " + rectangle.ToString();
             return new Result { Square = square, Rectangle = rectangle };
+        }
 
-            void ClearArea(int x ,int y)
+        static void ClearArea(int x ,int y, Bitmap bmp)
+        {
+            Color pixelColor3 = bmp.GetPixel(0, 10);
+            for (int set = x; set >= (x + 1 - width); set--)
             {
-                for (int set = x; set >= (x + 1 - width); set--)
+                for (int sset = y; sset >= (y + 1 - height); sset--)
                 {
-                    for (int sset = y; sset >= (y + 1 - height); sset--)
-                    {
-                        bmp.SetPixel(set, sset, pixelColor3);
-                    }
+                    bmp.SetPixel(set, sset, pixelColor3);
                 }
             }
+        }
+
+        static void IdentifyFigure(int height, int width)
+        {
+            if (height == width)
+                square++;
+            else
+                rectangle++;            
         }
     }
 }

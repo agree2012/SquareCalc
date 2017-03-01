@@ -10,3 +10,15 @@ c:\Users\Илья\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\Windows
 C:\Users\Илья\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\cbmp.bmp
 C:\Users\Илья\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\SquareCalculator.BI.dll
 C:\Users\Илья\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\SquareCalculator.BI.pdb
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\cbmp.bmp
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\SquareCalculator.BI.dll
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\SquareCalculator.BI.pdb
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
