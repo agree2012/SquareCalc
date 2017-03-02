@@ -23,7 +23,6 @@ namespace SquareCalculator.BI
         static int rectangle = 0;
         public static Result Calc(Bitmap bmp)
         {
-            Color pixelColor3 = bmp.GetPixel(0, 10);
             for (int @string = 0; @string < 10; @string++)
             {
                 for (int column = 0; column < 10; column++)
@@ -55,7 +54,6 @@ namespace SquareCalculator.BI
                     }
                 }
             }
-            string result = "Число квадратов = " + square.ToString() + ";  Число прямоугольников = " + rectangle.ToString();
             return new Result { Square = square, Rectangle = rectangle };
         }
 
