@@ -7,13 +7,8 @@ using System.Drawing;
 
 namespace WindowsFormsApp1
 {
-    class Program
+    static class Program
     {
-        //public EventHandler Click { get; private set; }
-
-        /// <summary>
-        /// Главная точка входа для приложения.
-        /// </summary>
         [STAThread]
         static void Main()
         {

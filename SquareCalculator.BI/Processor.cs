@@ -13,8 +13,7 @@ namespace SquareCalculator.BI
         public int Rectangle ;
         public int Square;
     }
-
-    //todo test
+    
     public static class Processor
     {
         static int width = 1;
