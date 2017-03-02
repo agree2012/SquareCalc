@@ -58,12 +58,24 @@ namespace SquareCalculator.BI
 
         static void ClearArea(int x ,int y, Bitmap bmp)
         {
-            Color pixelColor3 = bmp.GetPixel(0, 10);
+            Color pixelColor = bmp.GetPixel(0, 0);
+            for (int @string = 0; @string < 10; @string++)
+            {
+                for (int column = 0; column < 10; column++)
+                {
+                    if (bmp.GetPixel(column, @string).ToString() == "Color [A=255, R=255, G=255, B=255]")
+                    {
+                        pixelColor = bmp.GetPixel(column, @string);
+                        break;
+                    }break;
+                }
+            }
+
             for (int set = x; set >= (x + 1 - width); set--)
             {
                 for (int sset = y; sset >= (y + 1 - height); sset--)
                 {
-                    bmp.SetPixel(set, sset, pixelColor3);
+                    bmp.SetPixel(set, sset, pixelColor);
                 }
             }
         }

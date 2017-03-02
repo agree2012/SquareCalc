@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
             pictureBox1.DrawToBitmap(bmp, new Rectangle(0, 0, pictureBox1.Image.Width, pictureBox1.Image.Height));
             pictureBox1.Image = bmp;
             var res = Processor.Calc(bmp);
-            MessageBox.Show($"Количество квадратов: {res.Square} Количество прямоугольников: {res.Rectangle} ", @"Количество квадратов", MessageBoxButtons.OK);                    
+            MessageBox.Show($"Количество квадратов: {res.Square} Количество прямоугольников: {res.Rectangle} ", @"Количество квадратов", MessageBoxButtons.OK);
         }   
     }          
 }
