@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
         
         public void button_activate_Click_1(object sender, EventArgs e)
         {   
-            pictureBox1.Load(Application.StartupPath + @"\cbmp2.bmp");
+            pictureBox1.Load(Application.StartupPath + @"\cbmp.bmp");
             Bitmap bmp = new Bitmap(pictureBox1.Image.Width+1, pictureBox1.Image.Height+1);
             pictureBox1.DrawToBitmap(bmp, new Rectangle(0, 0, pictureBox1.Image.Width, pictureBox1.Image.Height));
             pictureBox1.Image = bmp;
