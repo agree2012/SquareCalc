@@ -22,19 +22,19 @@ namespace SquareCalculator.BI
         static int rectangle = 0;
         public static Result Calc(Bitmap bmp)
         {
-            for (int @string = 0; @string < 10; @string++)
+            for (int @string = 0; @string < bmp.Height-1; @string++)
             {
-                for (int column = 0; column < 10; column++)
+                for (int column = 0; column < bmp.Width - 1; column++)
                 {
                     if (bmp.GetPixel(column, @string).ToString() == "Color [A=255, R=0, G=0, B=0]")
                     {
-                        for (int i = column; i < 10; i++)
+                        for (int i = column; i < bmp.Width - 1; i++)
                         {
                             if (bmp.GetPixel(i, @string) == bmp.GetPixel(i + 1, @string))
                                 width++;
                             else
                             {
-                                for (int j = @string; j < 10; j++)
+                                for (int j = @string; j < bmp.Width - 1; j++)
                                 {
                                     if (bmp.GetPixel(i, j) == bmp.GetPixel(i, j + 1))
                                         height++;
@@ -59,16 +59,18 @@ namespace SquareCalculator.BI
         static void ClearArea(int x ,int y, Bitmap bmp)
         {
             Color pixelColor = bmp.GetPixel(0, 0);
-            for (int @string = 0; @string < 10; @string++)
+            for (int @string = 0; @string < bmp.Height ; @string++)
             {
-                for (int column = 0; column < 10; column++)
+                for (int column = 0; column < bmp.Width ; column++)
                 {
                     if (bmp.GetPixel(column, @string).ToString() == "Color [A=255, R=255, G=255, B=255]")
                     {
                         pixelColor = bmp.GetPixel(column, @string);
                         break;
-                    }break;
+                    }
                 }
+                if (pixelColor != bmp.GetPixel(0, 0))
+                    break;
             }
 
             for (int set = x; set >= (x + 1 - width); set--)
