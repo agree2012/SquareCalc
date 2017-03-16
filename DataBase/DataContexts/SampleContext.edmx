@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="sampleModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Departament">
+          <Key>
+            <PropertyRef Name="dept_no" />
+          </Key>
+          <Property Name="dept_no" Type="int" Nullable="false" />
+          <Property Name="dept_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="location" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="number_emp" Type="int" Nullable="false" />
+          <Property Name="area_m2" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sample.dbo.emp_project_relation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="emp_project_relation">
+          <Key>
+            <PropertyRef Name="project_no_emp" />
+          </Key>
+          <Property Name="project_no_emp" Type="int" Nullable="false" />
+          <Property Name="project_no_project" Type="int" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="emp_no" />
+          </Key>
+          <Property Name="emp_no" Type="int" Nullable="false" />
+          <Property Name="emp_fname" Type="nchar" MaxLength="10" />
+          <Property Name="emp_lname" Type="nchar" MaxLength="10" />
+          <Property Name="salary" Type="int" Nullable="false" />
+          <Property Name="dept_no" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="project">
+          <Key>
+            <PropertyRef Name="project_no" />
+          </Key>
+          <Property Name="project_no" Type="int" Nullable="false" />
+          <Property Name="project_name" Type="varchar" MaxLength="50" />
+          <Property Name="budget" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="works_on">
+          <Key>
+            <PropertyRef Name="emp_no" />
+          </Key>
+          <Property Name="emp_no" Type="int" Nullable="false" />
+          <Property Name="job" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sample.dbo.ProjectView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ProjectView">
+          <Key>
+            <PropertyRef Name="project_no_emp" />
+          </Key>
+          <Property Name="project_no_emp" Type="int" Nullable="false" />
+          <Property Name="project_no_project" Type="int" />
+        </EntityType>
+        <Association Name="FK_emp_project_relation_employee">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="emp_project_relation" Type="Self.emp_project_relation" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="emp_no" />
+            </Principal>
+            <Dependent Role="emp_project_relation">
+              <PropertyRef Name="project_no_emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_emp_project_relation_project">
+          <End Role="project" Type="Self.project" Multiplicity="0..1" />
+          <End Role="emp_project_relation" Type="Self.emp_project_relation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="project_no" />
+            </Principal>
+            <Dependent Role="emp_project_relation">
+              <PropertyRef Name="project_no_project" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_employee_Departament">
+          <End Role="Departament" Type="Self.Departament" Multiplicity="1" />
+          <End Role="employee" Type="Self.employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departament">
+              <PropertyRef Name="dept_no" />
+            </Principal>
+            <Dependent Role="employee">
+              <PropertyRef Name="dept_no" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_works_on_employee">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="works_on" Type="Self.works_on" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="emp_no" />
+            </Principal>
+            <Dependent Role="works_on">
+              <PropertyRef Name="emp_no" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="sampleModelStoreContainer">
+          <EntitySet Name="Departament" EntityType="Self.Departament" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="project" EntityType="Self.project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="works_on" EntityType="Self.works_on" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="emp_project_relation" EntityType="Self.emp_project_relation" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [emp_project_relation].[project_no_emp] AS [project_no_emp], 
+    [emp_project_relation].[project_no_project] AS [project_no_project]
+    FROM [dbo].[emp_project_relation] AS [emp_project_relation]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ProjectView" EntityType="Self.ProjectView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProjectView].[project_no_emp] AS [project_no_emp], 
+    [ProjectView].[project_no_project] AS [project_no_project]
+    FROM [dbo].[ProjectView] AS [ProjectView]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_emp_project_relation_employee" Association="Self.FK_emp_project_relation_employee">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="emp_project_relation" EntitySet="emp_project_relation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_emp_project_relation_project" Association="Self.FK_emp_project_relation_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="emp_project_relation" EntitySet="emp_project_relation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_employee_Departament" Association="Self.FK_employee_Departament">
+            <End Role="Departament" EntitySet="Departament" />
+            <End Role="employee" EntitySet="employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_works_on_employee" Association="Self.FK_works_on_employee">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="works_on" EntitySet="works_on" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="sampleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Departament">
+          <Key>
+            <PropertyRef Name="dept_no" />
+          </Key>
+          <Property Name="dept_no" Type="Int32" Nullable="false" />
+          <Property Name="dept_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="number_emp" Type="Int32" Nullable="false" />
+          <Property Name="area_m2" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="employee" Relationship="Self.FK_employee_Departament" FromRole="Departament" ToRole="employee" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="emp_no" />
+          </Key>
+          <Property Name="emp_no" Type="Int32" Nullable="false" />
+          <Property Name="emp_fname" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="emp_lname" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="salary" Type="Int32" Nullable="false" />
+          <Property Name="dept_no" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Departament" Relationship="Self.FK_employee_Departament" FromRole="employee" ToRole="Departament" />
+          <NavigationProperty Name="emp_project_relation" Relationship="Self.FK_emp_project_relation_employee" FromRole="employee" ToRole="emp_project_relation" />
+          <NavigationProperty Name="works_on" Relationship="Self.FK_works_on_employee" FromRole="employee" ToRole="works_on" />
+        </EntityType>
+        <EntityType Name="project">
+          <Key>
+            <PropertyRef Name="project_no" />
+          </Key>
+          <Property Name="project_no" Type="Int32" Nullable="false" />
+          <Property Name="project_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="budget" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="emp_project_relation" Relationship="Self.FK_emp_project_relation_project" FromRole="project" ToRole="emp_project_relation" />
+        </EntityType>
+        <EntityType Name="works_on">
+          <Key>
+            <PropertyRef Name="emp_no" />
+          </Key>
+          <Property Name="emp_no" Type="Int32" Nullable="false" />
+          <Property Name="job" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="employee" Relationship="Self.FK_works_on_employee" FromRole="works_on" ToRole="employee" />
+        </EntityType>
+        <EntityType Name="emp_project_relation">
+          <Key>
+            <PropertyRef Name="project_no_emp" />
+          </Key>
+          <Property Name="project_no_emp" Type="Int32" Nullable="false" />
+          <Property Name="project_no_project" Type="Int32" />
+          <NavigationProperty Name="employee" Relationship="Self.FK_emp_project_relation_employee" FromRole="emp_project_relation" ToRole="employee" />
+          <NavigationProperty Name="project" Relationship="Self.FK_emp_project_relation_project" FromRole="emp_project_relation" ToRole="project" />
+        </EntityType>
+        <EntityType Name="ProjectView">
+          <Key>
+            <PropertyRef Name="project_no_emp" />
+          </Key>
+          <Property Name="project_no_emp" Type="Int32" Nullable="false" />
+          <Property Name="project_no_project" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_employee_Departament">
+          <End Role="Departament" Type="Self.Departament" Multiplicity="1" />
+          <End Role="employee" Type="Self.employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departament">
+              <PropertyRef Name="dept_no" />
+            </Principal>
+            <Dependent Role="employee">
+              <PropertyRef Name="dept_no" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_emp_project_relation_employee">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="emp_project_relation" Type="Self.emp_project_relation" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="emp_no" />
+            </Principal>
+            <Dependent Role="emp_project_relation">
+              <PropertyRef Name="project_no_emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_works_on_employee">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="works_on" Type="Self.works_on" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="emp_no" />
+            </Principal>
+            <Dependent Role="works_on">
+              <PropertyRef Name="emp_no" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_emp_project_relation_project">
+          <End Role="project" Type="Self.project" Multiplicity="0..1" />
+          <End Role="emp_project_relation" Type="Self.emp_project_relation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="project_no" />
+            </Principal>
+            <Dependent Role="emp_project_relation">
+              <PropertyRef Name="project_no_project" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="sampleEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Departament" EntityType="Self.Departament" />
+          <EntitySet Name="employee" EntityType="Self.employee" />
+          <EntitySet Name="project" EntityType="Self.project" />
+          <EntitySet Name="works_on" EntityType="Self.works_on" />
+          <EntitySet Name="emp_project_relation" EntityType="Self.emp_project_relation" />
+          <EntitySet Name="ProjectView" EntityType="Self.ProjectView" />
+          <AssociationSet Name="FK_employee_Departament" Association="Self.FK_employee_Departament">
+            <End Role="Departament" EntitySet="Departament" />
+            <End Role="employee" EntitySet="employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_emp_project_relation_employee" Association="Self.FK_emp_project_relation_employee">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="emp_project_relation" EntitySet="emp_project_relation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_works_on_employee" Association="Self.FK_works_on_employee">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="works_on" EntitySet="works_on" />
+          </AssociationSet>
+          <AssociationSet Name="FK_emp_project_relation_project" Association="Self.FK_emp_project_relation_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="emp_project_relation" EntitySet="emp_project_relation" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="sampleModelStoreContainer" CdmEntityContainer="sampleEntities">
+          <EntitySetMapping Name="Departament">
+            <EntityTypeMapping TypeName="sampleModel.Departament">
+              <MappingFragment StoreEntitySet="Departament">
+                <ScalarProperty Name="dept_no" ColumnName="dept_no" />
+                <ScalarProperty Name="dept_name" ColumnName="dept_name" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="number_emp" ColumnName="number_emp" />
+                <ScalarProperty Name="area_m2" ColumnName="area_m2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employee">
+            <EntityTypeMapping TypeName="sampleModel.employee">
+              <MappingFragment StoreEntitySet="employee">
+                <ScalarProperty Name="emp_no" ColumnName="emp_no" />
+                <ScalarProperty Name="emp_fname" ColumnName="emp_fname" />
+                <ScalarProperty Name="emp_lname" ColumnName="emp_lname" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="dept_no" ColumnName="dept_no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="project">
+            <EntityTypeMapping TypeName="sampleModel.project">
+              <MappingFragment StoreEntitySet="project">
+                <ScalarProperty Name="project_no" ColumnName="project_no" />
+                <ScalarProperty Name="project_name" ColumnName="project_name" />
+                <ScalarProperty Name="budget" ColumnName="budget" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="works_on">
+            <EntityTypeMapping TypeName="sampleModel.works_on">
+              <MappingFragment StoreEntitySet="works_on">
+                <ScalarProperty Name="emp_no" ColumnName="emp_no" />
+                <ScalarProperty Name="job" ColumnName="job" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="emp_project_relation">
+            <EntityTypeMapping TypeName="sampleModel.emp_project_relation">
+              <MappingFragment StoreEntitySet="emp_project_relation">
+                <ScalarProperty Name="project_no_emp" ColumnName="project_no_emp" />
+                <ScalarProperty Name="project_no_project" ColumnName="project_no_project" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectView">
+            <EntityTypeMapping TypeName="sampleModel.ProjectView">
+              <MappingFragment StoreEntitySet="ProjectView">
+                <ScalarProperty Name="project_no_emp" ColumnName="project_no_emp" />
+                <ScalarProperty Name="project_no_project" ColumnName="project_no_project" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

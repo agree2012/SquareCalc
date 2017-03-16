@@ -7,3 +7,10 @@ C:\Users\Илья\Source\Repos\SquareCalc\SquareCalculator.BI\bin\Debug\SquareCa
 C:\Users\Илья\Source\Repos\SquareCalc\SquareCalculator.BI\obj\Debug\SquareCalculator.BI.csprojResolveAssemblyReference.cache
 C:\Users\Илья\Source\Repos\SquareCalc\SquareCalculator.BI\obj\Debug\SquareCalculator.BI.dll
 C:\Users\Илья\Source\Repos\SquareCalc\SquareCalculator.BI\obj\Debug\SquareCalculator.BI.pdb
+C:\Users\Илья\Source\Repos\SquareCalc\SquareCalculator.BI\bin\Debug\SquareCalculator.BI.dll.config
+C:\Users\Илья\Source\Repos\SquareCalc\SquareCalculator.BI\bin\Debug\DataBase.dll
+C:\Users\Илья\Source\Repos\SquareCalc\SquareCalculator.BI\bin\Debug\EntityFramework.dll
+C:\Users\Илья\Source\Repos\SquareCalc\SquareCalculator.BI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Илья\Source\Repos\SquareCalc\SquareCalculator.BI\bin\Debug\DataBase.pdb
+C:\Users\Илья\Source\Repos\SquareCalc\SquareCalculator.BI\bin\Debug\EntityFramework.xml
+C:\Users\Илья\Source\Repos\SquareCalc\SquareCalculator.BI\bin\Debug\EntityFramework.SqlServer.xml

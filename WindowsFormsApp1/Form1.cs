@@ -20,7 +20,15 @@ namespace WindowsFormsApp1
             pictureBox1.Image = bmp;
             var res = Processor.Calc(bmp);
             MessageBox.Show($"Количество квадратов: {res.Square} Количество прямоугольников: {res.Rectangle} ", @"Количество квадратов", MessageBoxButtons.OK);
-        }   
+        }
+
+        private void db_connect_Click(object sender, EventArgs e)
+        {
+            var res = DbReader.ReadEmployee("Bill");
+            foreach (var a in res)
+                MessageBox.Show($"{a.dept_no}    {a.emp_fname}{a.emp_lname}{a.salary}");
+        
+        }
     }          
 }
 

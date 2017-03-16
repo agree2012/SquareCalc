@@ -25,3 +25,9 @@ C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\obj\Debug\WindowsForm
 C:\GIT\Test\SquareCalc\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
 C:\GIT\Test\SquareCalc\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\GIT\Test\SquareCalc\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\DataBase.dll
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\DataBase.pdb
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml

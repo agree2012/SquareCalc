@@ -35,6 +35,7 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.db_connect = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
@@ -79,6 +80,7 @@
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.Controls.Add(this.button2);
+            this.flowLayoutPanel3.Controls.Add(this.db_connect);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 117);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(285, 29);
@@ -89,7 +91,7 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Default;
             this.button2.Location = new System.Drawing.Point(3, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(282, 23);
+            this.button2.Size = new System.Drawing.Size(69, 23);
             this.button2.TabIndex = 0;
             this.button2.Text = "AUTOBOTS ACTIVATE";
             this.button2.UseVisualStyleBackColor = true;
@@ -102,6 +104,16 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 3;
+            // 
+            // db_connect
+            // 
+            this.db_connect.Location = new System.Drawing.Point(78, 3);
+            this.db_connect.Name = "db_connect";
+            this.db_connect.Size = new System.Drawing.Size(75, 23);
+            this.db_connect.TabIndex = 1;
+            this.db_connect.Text = "БД";
+            this.db_connect.UseVisualStyleBackColor = true;
+            this.db_connect.Click += new System.EventHandler(this.db_connect_Click);
             // 
             // Form1
             // 
@@ -130,6 +142,7 @@
         public System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button db_connect;
     }
 }
 
