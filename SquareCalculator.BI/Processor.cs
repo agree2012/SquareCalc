@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace SquareCalculator.BI
 {
@@ -90,4 +91,6 @@ namespace SquareCalculator.BI
                 rectangle++;            
         }
     }
+    
+
 }

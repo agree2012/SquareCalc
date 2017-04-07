@@ -11,7 +11,7 @@
             <ColumnDefinition Width="259*"/>
             <ColumnDefinition Width="258*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="button" Content="MessageBox" HorizontalAlignment="Left" Margin="10,507,0,0" VerticalAlignment="Top" Width="76" Click="button_Click" Height="35"/>
+        <Button x:Name="reserve_but" Content="MessageBox" HorizontalAlignment="Left" Margin="10,507,0,0" VerticalAlignment="Top" Width="76" Click="button_Click" Height="35"/>
         <DataGrid x:Name="DbGrid" Margin="0,5,0,43" Grid.ColumnSpan="2" SelectionChanged="dataGrid1_SelectionChanged" />
         <Button x:Name="button1" Content="DbGrid" HorizontalAlignment="Left" Margin="91,507,0,0" VerticalAlignment="Top" Width="89" Height="35" Click="button1_Click"/>
         <Button x:Name="but_work" Content="Works" Grid.Column="1" HorizontalAlignment="Left" Margin="17,507,0,0" VerticalAlignment="Top" Width="87" Height="38" Click="but_work_Click"/>

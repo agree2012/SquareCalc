@@ -100,10 +100,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataBase\DataBase.csproj">
-      <Project>{407ced76-e3dd-42e1-94e1-b50ea80d6d1f}</Project>
-      <Name>DataBase</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SquareCalculator.BI\SquareCalculator.BI.csproj">
       <Project>{5f4f0ae4-4477-44a2-9672-06390073172b}</Project>
       <Name>SquareCalculator.BI</Name>

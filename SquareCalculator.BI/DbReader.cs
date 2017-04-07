@@ -1,9 +1,7 @@
 ﻿using DataBase.DataContexts;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace SquareCalculator.BI
 {
@@ -21,7 +19,7 @@ namespace SquareCalculator.BI
         }
         public static IEnumerable<employee> ReadEmployee()
         {
-            return db.employee.Select(p => p).ToList();
+            return db.employee.Select(p =>p).ToList();
         }
         public static IEnumerable<Departament> ReadDepartment()
         {
@@ -52,21 +50,35 @@ namespace SquareCalculator.BI
         orderby em.emp_fname
         select new { em.emp_fname, em.emp_lname, em.salary, work.job, dept.dept_no, dept.dept_name, dept.location };
         */
-
-
-
-
-
-
-
-        /*public static IEnumerable<employee> ReadEmployee()
+   
+        public static IEnumerable<PropAllTable> ReadAllTAble()
         {
             var res =
-            from e in db.employee
-            where e.emp_fname == "Billy"
-            orderby e.salary
-            select new { e.emp_fname, e.emp_lname, e.salary};
-            return res;
-        }*/
+            from em in db.employee
+            join dept in db.Departament on em.dept_no equals dept.dept_no
+            join work in db.works_on on em.emp_no equals work.emp_no
+            orderby em.emp_fname
+            select new PropAllTable()
+            {
+                Emp_fname = em.emp_fname,
+                Emp_lname = em.emp_lname,
+                Salary = em.salary,
+                Job = work.job,
+                Dept_no = dept.dept_no,
+                Dept_name = dept.dept_name,
+                Location = dept.location };
+            
+            return res.ToList();
+        }
+    }
+    public class PropAllTable
+    {
+        public string Emp_fname { get; set; }
+        public string Emp_lname { get; set; }
+        public int Salary { get; set; }
+        public string Job { get; set; }
+        public int Dept_no { get; set; }
+        public string Dept_name { get; set; }
+        public string Location { get; set; }
     }
 }

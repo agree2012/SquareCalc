@@ -31,3 +31,5 @@ C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\DataBase.pd
 C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\EntityFramework.xml
 C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\DataBase.dll.config
+C:\Users\Илья\Source\Repos\SquareCalc\WindowsFormsApp1\bin\Debug\SquareCalculator.BI.dll.config

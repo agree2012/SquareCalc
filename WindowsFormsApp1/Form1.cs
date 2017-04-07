@@ -27,8 +27,8 @@ namespace WindowsFormsApp1
             var res = DbReader.ReadEmployee("Bill");
             foreach (var a in res)
                 MessageBox.Show($"{a.dept_no}    {a.emp_fname}{a.emp_lname}{a.salary}");
-        
         }
+
     }          
 }
 

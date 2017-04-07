@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BE99DAB0-1D81-4878-BC22-0DC049F55502}</ProjectGuid>
+    <ProjectGuid>{E24B45D1-9EA2-4BF3-9B54-3E5877A24622}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DatabaseOutput</RootNamespace>
-    <AssemblyName>DatabaseOutput</AssemblyName>
+    <RootNamespace>DbAddSave</RootNamespace>
+    <AssemblyName>DbAddSave</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -64,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DbMethods.cs" />
+    <Compile Include="RelayCommand.cs" />
+    <Compile Include="ViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -72,6 +75,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Employee.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -107,12 +111,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataBase\DataBase.csproj">
-      <Project>{407ced76-e3dd-42e1-94e1-b50ea80d6d1f}</Project>
+      <Project>{407CED76-E3DD-42E1-94E1-B50EA80D6D1F}</Project>
       <Name>DataBase</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SquareCalculator.BI\SquareCalculator.BI.csproj">
-      <Project>{5f4f0ae4-4477-44a2-9672-06390073172b}</Project>
-      <Name>SquareCalculator.BI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
