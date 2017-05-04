@@ -11,6 +11,9 @@ namespace DbAddSave
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
+    /// <summary>  
+    ///  This class performs an important function.  
+    /// </summary>
     public partial class App : Application
     {
     }
