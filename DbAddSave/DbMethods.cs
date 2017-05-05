@@ -10,6 +10,7 @@ namespace DbAddSave
     {
         public static void Addtodb(Employee e)
         {
+             /// <param name="Int2">Used to indicate status.</param>
             using (sampleEntities db = new sampleEntities())
             {
                 db.employee.Add(new employee
