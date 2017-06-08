@@ -8,6 +8,7 @@ namespace DbAddSave
 {
     public class Employee : INotifyPropertyChanged
     {
+     /// <param name="Int1">Used to indicate status.</param>
         private int emp_no;
         private string emp_fname;
         private string emp_lname;
